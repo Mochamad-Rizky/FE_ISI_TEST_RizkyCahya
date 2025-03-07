@@ -1,26 +1,48 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@config '../../tailwind.config.ts';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --main: #88aaee;
+  --overlay: rgba(0, 0, 0, 0.8); 
+
+  --bg: #dfe5f2;
+  --bw: #fff; 
+  --blank: #000; 
+  --border: #000;
+  --text: #000;
+  --mtext: #000; 
+  --ring: #000;
+  --ring-offset: #fff;
+  --success: #00ff00;
+  --error: #ff0000;
+  --info: #0000ff;
+  --warning: #ffcc00;
+
+
+  --border-radius: 5px;
+  --box-shadow-x: 4px;
+  --box-shadow-y: 4px;
+  --reverse-box-shadow-x: -4px;
+  --reverse-box-shadow-y: -4px;
+  --base-font-weight: 500;
+  --heading-font-weight: 700;
+
+  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.dark {
+  --bg: #272933;
+  --bw: #212121;
+  --blank: #fff;
+  --border: #000;
+  --text: #e6e6e6;
+  --mtext: #000;
+  --ring: #fff;
+  --ring-offset: #000;
+  --success: #00ff00;
+  --error: #ff0000;
+  --info: #0000ff;
+  --warning: #ffcc00;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
