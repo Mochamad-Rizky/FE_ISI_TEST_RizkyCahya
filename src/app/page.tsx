@@ -1,14 +1,14 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Fragment } from 'react';
+'use client';
+
+import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <Fragment>
-      <Badge variant='success'>Hai</Badge>
-      <Button>Button</Button>
-      <Textarea />
-    </Fragment>
-  );
+  const session = useSession();
+
+  if (session.status === 'loading') {
+    return null;
+  }
+
+  return session.data?.user ? redirect('/tasks') : redirect('/login');
 }

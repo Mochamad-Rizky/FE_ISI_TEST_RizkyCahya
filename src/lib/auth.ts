@@ -64,12 +64,15 @@ export const authOptions: NextAuthOptions = {
             data.accessToken.token
           );
 
+          console.log('ini data kakak', data);
+
           return {
             user: dataProfile.user,
             token: data,
             id: dataProfile.user.roleId,
           };
         } catch (error) {
+          console.log(error, 'ini error');
           if (error instanceof AxiosError) {
             const errorData = error.response?.data;
             throw new Error(parseError(errorData));

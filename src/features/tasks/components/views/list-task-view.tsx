@@ -107,11 +107,7 @@ export default function ListTaskView() {
 
                   <div className='mt-2 flex justify-end gap-2'>
                     <UpdateTaskForm taskData={task} />
-                    <CheckAccessPermission
-                      permissions={[Permission.lead.ViewTaskHistory]}
-                    >
-                      <TaskHistoryView taskData={task} />
-                    </CheckAccessPermission>
+                    <TaskHistoryView taskData={task} />
                   </div>
                 </CardContent>
               </Card>

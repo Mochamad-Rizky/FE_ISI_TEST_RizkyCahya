@@ -29,6 +29,7 @@ import { toast } from 'sonner';
 
 export default function LoginForm() {
   const router = useRouter();
+  console.log(process.env.NEXT_PUBLIC_BASE_API);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const form = useForm<LoginSchema>({
@@ -58,7 +59,9 @@ export default function LoginForm() {
 
         toast.error(error ? error : globalMessage.somethingWentWrong);
       }
+      console.log(res);
     } catch (error) {
+      console.log(error);
       toast.error((error as Error).message);
     } finally {
       setIsLoading(false);
