@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { globalMessage } from '@/constants/message';
 import { useLogout } from '@/features/auth/hooks/queries/auth-query';
-import { useGetProfile } from '@/features/users/hooks/users-query';
+import { useGetProfile } from '@/features/users/hooks/queries/users-query';
 import { parseError } from '@/utils/parse-error';
 import { signOut, useSession } from 'next-auth/react';
 import { toast } from 'sonner';

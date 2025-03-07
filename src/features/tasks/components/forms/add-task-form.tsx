@@ -29,7 +29,7 @@ import {
   createTaskSchema,
   CreateTaskSchema,
 } from '@/features/tasks/schemas/tasks-schema';
-import { useGetListUsers } from '@/features/users/hooks/users-query';
+import { useGetListUsers } from '@/features/users/hooks/queries/users-query';
 import { queryClient } from '@/providers/provider-query';
 import { parseError } from '@/utils/parse-error';
 import { zodResolver } from '@hookform/resolvers/zod';
