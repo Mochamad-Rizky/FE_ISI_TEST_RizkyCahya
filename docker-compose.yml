@@ -1,11 +1,23 @@
+version: '3.8'
+
 services:
-  app:
+  frontend:
+    container_name: frontend
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: docker-next
     ports:
       - '3000:3000'
-    volumes:
-      - .:/app
-      - /app/node_modules
+    environment:
+      NEXT_PUBLIC_BASE_API: '${NEXT_PUBLIC_BASE_API}'
+      NEXTAUTH_SECRET: '${NEXTAUTH_SECRET}'
+      NEXTAUTH_URL: '${NEXTAUTH_URL}'
+      NEXT_PUBLIC_HOST_URL: '${NEXT_PUBLIC_HOST_URL}'
+    restart: always
+    networks:
+      - task-management-system-pt-ihsan_stagingnetwork # Add this line to connect to the same network as the backend
+
+networks:
+  task-management-system-pt-ihsan_stagingnetwork:
+    external: true # Gunakan jaringan yang sudah ada
+
